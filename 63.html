@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <xmp>
+        QUESTION 63
+        HOTSPOT
+        An HTML page has a CANVAS element.
+        
+        You need to draw a red rectangle on the CANVAS element dynamically. The rectangle should resemble the
+        following graphic.
+        (Tienes que dibujar un rectángulo rojo en el elemento CANVAS de forma dinámica. El rectángulo debe parecerse al
+        siguiente gráfico.)
+    </xmp>
+    <img src="63-1.png" width="100" height="100" alt="Rectangulo" >
+    <xmp>
+        How should you build the code segment? To answer, select the appropriate options in the answer area.
+        NOTE: Each correct selection is worth one poin
+    </xmp>
+    <img src="63-2.png" width="600" height="600" alt="Pregunta" ><br>
+    <p><b>RESPUESTA</b></p>
+    <img src="63-3.png" width="600" height="600" alt="Pregunta" ><br>
+    <xmp>Si usamos document.BeginPath() vemos que no hace nada</xmp>
+    <canvas id="mycanvas1" width="300" height="300"></canvas>
+    <script type="text/javascript">
+        var canvas = document.BeginPath();
+        var context = canvas.getContext('2d');
+        context.fillRect(50,50,100,100);
+        context.fillStyle="rgb(255,0,0)";
+        
+    </script>
+    <xmp>Si ponemos antes context.fillRect(50,50,100,100) que context.fillStyle="rgb(255,0,0)"</xmp>
+    <canvas id="mycanvas2" width="300" height="300"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("mycanvas2");
+        var context = canvas.getContext('2d');
+        context.fillRect(50,50,100,100);
+        context.fillStyle="rgb(255,0,0)";
+        
+    </script>
+    <xmp>Si ponemos primero context.fillStyle="rgb(255,0,0)" y luego  context.fillRect(50,50,100,100)</xmp>
+    <canvas id="mycanvas3" width="300" height="300"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("mycanvas3");
+        var context = canvas.getContext('2d');
+        context.fillStyle="rgb(255,0,0)";
+        context.fillRect(50,50,100,100);
+    </script>
+</body>
+</html>

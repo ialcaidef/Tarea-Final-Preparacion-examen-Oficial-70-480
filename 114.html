@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <xmp>
+        QUESTION 114
+        You are developing a web application that can function when users are not connected to the Internet.
+        You need to check the Internet connectivity status of a user's browser.
+        Which method should you use?
+
+        A - function checkConnection()
+            {
+                if (navigator.isOnline){
+                    ...
+                }
+            }
+
+        B - function checkConnection()
+            {
+                if (browser.isOnline){
+                    ...
+                }
+                else{
+                    ...
+                }
+            }
+
+        C - function checkConnection()
+            {
+                if (browser.online){
+                    ...
+                }
+                else{
+                    ...
+                }
+            }    
+
+        D - function checkConnection()
+            {
+                if (navigator.online){}
+                    ...
+                }
+                else{
+                    ...
+                }
+            }                
+
+    </xmp>
+
+        <button onclick="funcionA()">Funcion A</button>
+        <button onclick="funcionB()">Funcion B</button>
+        <button onclick="funcionC()">Funcion C</button>
+        <button onclick="funcionD()">Funcion D</button>
+        <p id="demo"></p>
+
+        <script>
+            function funcionA() {
+                try
+                {
+                    document.getElementById("demo").innerHTML="FUNCION A - ";
+                    if (navigator.isOnline){
+                        var x = "¿El navegador esta online? " + navigator.onLine;
+                        document.getElementById("demo").innerHTML += x;
+                    }
+                }
+                catch (error){
+                    var x = "¿El navegador esta online? " + error.message;
+                    document.getElementById("demo").innerHTML += x;
+                }
+                document.getElementById("demo").innerHTML += " isOnline no existe, sin embargo no da error"
+            }
+
+            function funcionB()
+            {
+                try
+                {
+                    document.getElementById("demo").innerHTML="FUNCION B - ";
+                    if (browser.online){
+                        var x = "¿El navegador esta online? " + true;
+                        document.getElementById("demo").innerHTML += x;
+                    }
+                    else
+                    {
+                        var x = "¿El navegador esta online? " + false;
+                        document.getElementById("demo").innerHTML += x;
+                    }
+                }
+                catch (error)
+                {
+                    var x = "¿El navegador esta online? " + error;
+                    document.getElementById("demo").innerHTML += x;
+                }
+            }
+
+            function funcionC()
+            {
+                try
+                {
+                    document.getElementById("demo").innerHTML="FUNCION C - ";
+                    if (browser.online){
+                        var x = "¿El navegador esta online? " + true;
+                        document.getElementById("demo").innerHTML += x;
+                    }
+                    else
+                    {
+                        var x = "¿El navegador esta online? " + false;
+                        document.getElementById("demo").innerHTML += x;
+                    }
+                }
+                catch (error)
+                {
+                    var x = "¿El navegador esta online? " + error;
+                    document.getElementById("demo").innerHTML += x;
+                }
+            }
+
+            function funcionD()
+            {
+                document.getElementById("demo").innerHTML="FUNCION D - ";
+                if (navigator.onLine){  
+                    var x = "¿El navegador esta online? " + true;
+                    document.getElementById("demo").innerHTML += x;
+                }
+                else
+                {
+                    var x = "¿El navegador esta online? " + false;
+                    document.getElementById("demo").innerHTML += x;
+                }
+
+                document.getElementById("demo").innerHTML += " Respuesta correcta <b>D</b>. Pero funciona poniendo <b>onLine</b> en vez de <b>online</b> como viene en el enunciado";
+            }
+        </script>
+        
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+                          
+          $(document.getElementById("opcionA")).click(function(){
+            $('input[name!="name"]').css({'background-color':'#FFFFFF'})  
+            $('input[name!="name"]').css({'background-color':'#E0ECF8'})
+            $(document.getElementById("Respuesta").innerHTML="<h4>No es correcta porque cambia el color de todos los input</h4>")
+          });
+
+          $(document.getElementById("opcionB")).click(function(){
+            $('input[name!="name"]').css({'background-color':'#FFFFFF'})    
+            $('input[name~="name"]').css({'background-color':'#E0ECF8'})
+            $(document.getElementById("Respuesta").innerHTML="<h4>No es correcta porque no encuentra nada</h4>")
+          });
+
+          $(document.getElementById("opcionC")).click(function(){
+            $('input[name!="name"]').css({'background-color':'#FFFFFF'})    
+            $('input[name*="name"]').css({'background-color':'#E0ECF8'})
+            $(document.getElementById("Respuesta").innerHTML="<h4>No es correcta porque busca en cualquier posición</h4>")
+          });
+
+          $(document.getElementById("opcionD")).click(function(){
+            $('input[name!="name"]').css({'background-color':'#FFFFFF'})    
+            $('input[name$="name"]').css({'background-color':'#E0ECF8'})
+            $(document.getElementById("Respuesta").innerHTML="<h2>Respuesta correcta D</h2>")
+          });
+        });
+        </script>
+</head>
+<body>
+    <xmp>
+        QUESTION 148
+        You develop an HTML5 webpage. You have the following HTML markup:
+        You need to change the background color for all of the elements whose name attribute 
+        ends with the word name.
+
+        <label for "personame">Given and Surname:</label>
+        <input type"text" name="personname"/><br/>
+
+        <label for "businessname">Business Name:</label>
+        <input type"text" name="businessname"/><br/>
+
+        <label for "emailaddress">Email Address:</label>
+        <input type"text" name="emailaddress"/><br/>
+
+        Which code segment should you add to the webpage?
+        A. $('input[name!="name"]').css({'background-color':'#E0ECF8'})
+        B. $('input[name~="name"]').css({'background-color':'#E0ECF8'})
+        C. $('input[name*="name"]').css({'background-color':'#E0ECF8'})
+        D. $('input[name$="name"]').css({'background-color':'#E0ECF8'})
+    </xmp>
+    <label for "personame">Given and Surname:</label>
+    <input type"text" name="personname"/><br>
+
+    <label for "businessname">Business Name:</label>
+    <input type"text" name="businessname"/><br>
+
+    <label for "emailaddress">Email Address:</label>
+    <input type"text" name="emailaddress"/><br>
+
+    
+    <button id="opcionA">Opción A</button>
+    <button id="opcionB">Opción B</button>
+    <button id="opcionC">Opción C</button>
+    <button id="opcionD">Opción D</button>
+
+    <p id="Respuesta"></p>
+</body>
+</html>
